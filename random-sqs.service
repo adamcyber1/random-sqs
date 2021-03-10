@@ -1,0 +1,13 @@
+[Unit]
+Description=Sample Python System Service
+
+[Service]
+WorkingDirectory=/usr/local/lib/random-sqs/
+Environment=PYTHONUNBUFFERED=1
+EnvironmentFile=/usr/local/etc/random-sqs/random-sqs.env
+ExecStart=/usr/local/lib/random-sqs/venv/bin/python3 /usr/local/lib/random-sqs/random-sqs.py
+
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
